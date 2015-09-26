@@ -10,12 +10,6 @@ var braintreeGateway = braintree.connect({
   privateKey: braintreeConfig.privateKey
 });
 
-// router.get('/', function(req, res) {
-//   res.render('index', {
-//     title: 'Mister Shane Second Shane New Money Payment Portal'
-//   });
-// });
-
 router.get("/braintree_token", function(req, res) {
   braintreeGateway.clientToken.generate({}, function (err, response) {
     if (err) {

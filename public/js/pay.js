@@ -1,8 +1,6 @@
 
 $(function() {
 
-  var $checkout = $('#checkout');
-
   var $paymentPledgeInput = $('#payment-pledge-input');
   var $paymentPledgeError = $('#payment-pledge-error');
   var $makeThePledge = $('#make-the-pledge-button');
@@ -54,7 +52,6 @@ $(function() {
       }
 
       $paymentPledgeInput.val(money);
-      //$paymentPledgeInput.attr('readonly', true);
     }
   });
 
@@ -107,7 +104,8 @@ $(function() {
     $paymentError.text('');
 
     var postParameters = {
-      payment_method_nonce: paymentData.nonce
+      payment_method_nonce: paymentData.nonce,
+      payment_amount: state.pledgedPaymentAmount
     };
     $.post('/checkout', postParameters, function(checkoutData) {
       if (!checkoutData.success) {
@@ -117,13 +115,30 @@ $(function() {
         state.hasSubmittedPayment = false;
       }
       else {
-        grantRewardsWithAmount(checkoutData.amount);
+        grantRewardsWithAmount(Number(checkoutData.amount));
       }
     });
   }
 
   function grantRewardsWithAmount(amount) {
+    var $paymentContainer = $('#payment-container');
+    var $rewardContainer = $('#reward-container');
+    var $archiveDownloadLink = $('#archive-download-link');
+    var $coupon = $('#coupon');
+    var ArchiveDownloadURL = '/fully-downloadable-complete-offline-second-shane-archive-computer.zip';
+    var SmallRewardCoupon = 'GetWhatYouEarned';
+    var LargeRewardCoupon = 'TheMoneyYouPaidWillHaveAnImpactOnHumanLives';
 
+    $paymentContainer.fadeOut(800, function() {
+      setTimeout(function() {
+        $archiveDownloadLink.attr('href', ArchiveDownloadURL);
+
+        var hasLargeCoupon = amount > 2;
+        $coupon.text(hasLargeCoupon ? LargeRewardCoupon : SmallRewardCoupon);
+
+        $rewardContainer.fadeIn(200);
+      }, 200);
+    });
   }
 
 });
