@@ -2,20 +2,135 @@
 body {
   padding: 50px;
   box-sizing: border-box;
+  background-color: white;
 }
 
-#welcome-message {
-  margin-bottom: 40px;
-  padding: 15px;
-  max-width: 444px;
-
-  font-family: 'Roboto Mono', monospace;
-  font-size: 18px;
-
-  background-color: rgb(32, 32, 32);
-  color: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+a {
+  color: rgb(20, 22, 245);
+  text-decoration: none;
   -webkit-transition: all 250ms;
   -moz-transition: all 250ms;
   transition: all 250ms;
+}
+  a:hover {
+    color: rgb(224, 206, 85);
+    text-decoration: underline;
+  }
+
+.message-box {
+  margin-bottom: 30px;
+  padding: 15px;
+  max-width: 555px;
+
+  color: rgba(0, 0, 0, 0.87);
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  font-family: 'Times New Roman', serif;
+  font-size: 18px;
+
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  transition: all 250ms;
+}
+
+#welcome-message {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+
+  background-color: rgb(32, 32, 32);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#payment-pledge div {
+  margin-bottom: 15px;
+}
+
+#payment-pledge-input {
+  font-family: 'Times New Roman', serif;
+  font-size: 18px;
+  appearance: none;
+  border-radius: none;
+  box-shadow: none;
+  margin: 5px;
+  padding: 5px;
+  border: none;
+  border-bottom: solid 2px #e3e3e3;
+
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  transition: all 250ms;
+}
+  #payment-pledge-input:focus {
+    outline: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-bottom: solid 2px #a6a6a6;
+  }
+  #payment-pledge-input.valid {
+    box-shadow: 0 10px 20px rgba(15, 247, 94, 0.19), 0 6px 6px rgba(15, 247, 94, 0.23);
+    border-bottom: solid 2px rgb(15, 247, 94);
+  }
+  #payment-pledge-input.invalid {
+    box-shadow: 0 10px 20px rgba(255, 0, 54, 0.19), 0 6px 6px rgba(255, 0, 54, 0.23);
+    border-bottom: solid 2px rgb(255, 0, 54);
+  }
+#payment-pledge-error {
+  color: rgb(255, 0, 54);
+  font-style: italic;
+  font-size: 15px;
+}
+#make-the-pledge-button {
+  border: 1px solid rgb(20, 20, 20);
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  -webkit-transition: all 250ms;
+  -moz-transition: all 250ms;
+  transition: all 250ms;
+}
+  #make-the-pledge-button.valid:hover {
+    background-color: rgb(5, 249, 168);
+    border: 1px solid transparent;
+  }
+  #make-the-pledge-button.disabled {
+    color: rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    cursor: not-allowed;
+  }
+#thanks-for-pledging {
+  display: none;
+  color: rgb(5, 110, 249);
+  font-size: 22px;
+  line-height: 28px;
+}
+  #pledged-amount {
+    text-decoration: underline;
+  }
+
+#payment-entry {
+  max-width: 666px;
+  position: relative;
+}
+#checkout-blocker {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: white;
+}
+#checkout {
+
+}
+#payment-form-submit {
+  margin-top: 15px;
+  font-family: 'Times New Roman', serif;
+  font-size: 18px;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+#payment-error {
+  color: rgb(255, 0, 54);
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 20px;
+  margin: 15px;
 }

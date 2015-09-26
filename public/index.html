@@ -13,15 +13,44 @@
 </head>
 <body>
   <div id="payment-container">
-    <div id="welcome-message">
-      Welcome to Mister Shane's Second Shane Secure and Verified Archive and New Money Acquisition
-      Payment Portal. Shane himself never sees any payment information you enter, so you know your data is
+    <div id="welcome-message" class="message-box">
+      Welcome to Mister Shane's Second Shane Secure and Verified Acquisition Payment Portal.
+      Here you will receive, at the least, a fully downloadable Archive of <a target="_blank" href="http://second.mistershane.com">Second Shane</a>
+      and over $4,000,000 New Money. Just One Payment Away. Please.
+      Shane himself never sees any payment information you enter, so you know your data is
       safe. He uses a trusted Payment Platform Provider called Paypal.
     </div>
-    <form id="checkout" method="post" action="/checkout">
-      <div id="payment-form"></div>
-      <input type="submit" value="Pay $10">
-    </form>
+    <div id="payment-amount-message" class="message-box">
+      Shane minimally requests $2.00 U.S. Dollars for the acquisiton of the Second Shane all-in-one
+      package. However, as a valued User of Second Shane, you have the option to Pay What You Want.
+      Any purchase amount over $4.99 U.S. Dollars will receive a unique Digital Surprise for use
+      in Second Shane in addition to the Archive and New Money Injection. Please enter your Desired
+      Payment Amount in the field below.
+    </div>
+    <div id="payment-pledge" class="message-box">
+      <div id="pledge-enter">
+        <div id="pledge">I Pledge to Pay Shane:</div>
+        <div>
+          $<input type="text" id="payment-pledge-input"/>
+          <span id="payment-pledge-error"></span>
+        </div>
+        <div id="make-the-pledge-button" class="disabled">
+          Make Your Pledge
+        </div>
+      </div>
+      <div id="thanks-for-pledging">
+        Perfect Pledge! You have Pledged to Pay Shane <span id="pledged-amount"></span>.
+        Please enter your payment information below.
+      </div>
+    </div>
+    <div id="payment-entry" class="message-box">
+      <div id="checkout-blocker"></div>
+      <form id="checkout" method="post" action="/checkout">
+        <div id="payment-form"></div>
+        <input id="payment-form-submit" type="submit" value="Pay Your Pledge, Support Your Shane">
+      </form>
+      <div id="payment-error"></div>
+    </div>
   </div>
 
   <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
