@@ -1,6 +1,14 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
+  .error-header= message
+  .error-header= error.status
   pre #{error.stack}
+  
+  .error-link
+    | Experience Second Shane 
+    a(href="/") here
+    
+  .error-link
+    | Pledge U.S. Dollars To Mister Shane 
+    a(href="/pledge") here

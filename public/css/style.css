@@ -158,3 +158,13 @@ a {
   font-weight: bold;
   font-size: 24px;
 }
+
+.error-header {
+  font-family: 'Times New Roman', serif;
+  font-size: 24px;
+}
+
+.error-link {
+  font-family: 'Times New Roman', serif;
+  font-size: 30px;
+}
