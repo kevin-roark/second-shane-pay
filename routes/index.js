@@ -10,10 +10,6 @@ var braintreeGateway = braintree.connect({
   privateKey: braintreeConfig.privateKey
 });
 
-router.get('/', function(req, res) {
-  res.redirect('http://second.mistershane.com');
-});
-
 router.get("/braintree_token", function(req, res) {
   braintreeGateway.clientToken.generate({}, function (err, response) {
     if (err) {
