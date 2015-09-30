@@ -17,7 +17,7 @@
       Welcome to <a target="_blank" href="http://www.mistershane.com">Mister Shane's</a>
       Second Shane Secure and Verified Acquisition Payment Portal.
       Here you will receive, at the least, a fully downloadable Archive of <a target="_blank" href="http://second.mistershane.com">Second Shane</a>
-      and over $4,000,000 New Money. Just One Payment Away. Please.
+      (containing .mp3, .mp4, .jpg, and many other file types) <i>in addition to</i> over $4,000,000 New Money. Just One Payment Away. Please.
       Shane himself never sees any payment information you enter, so you know your data is
       safe. He uses a trusted Payment Platform Provider called Paypal. If you have any questions
       regarding your purchase or potential purchase, please contact Mister Shane at mistershanemgmt@gmail.com.
@@ -32,50 +32,34 @@
       Payment Amount in the field below.
     </div>
     <div id="payment-pledge" class="message-box">
-      <div id="pledge-enter">
-        <div id="pledge">I Pledge to Pay Shane:</div>
-        <div>
-          $<input type="text" id="payment-pledge-input"/>
-          <span id="payment-pledge-error"></span>
+      <form name="_xclick" action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="business" value="mistershanemgmt@gmail.com" />
+        <input type="hidden" name="item_name" value="Second Shane Archive + New Money Package - Digital Goods Hand Delivered By Shane" />
+        <input type="hidden" name="item_number" value="666" />
+        <input type="hidden" name="no_shipping" value="1" />
+        <input type="hidden" name="cn" value="Leave Shane a Note:" />
+        <input id="return-url-input" name="return" type="hidden" value="http://www.secondshane.website/success" />
+        <input name="cancel_return" type="hidden" value="http://www.secondshane.website/pledge" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <div id="pledge-enter">
+          <div id="my-pledge">I Pledge to Pay Shane:</div>
+          <div>
+            $<input type="text" id="payment-pledge-input" name="amount" />
+            <span id="payment-pledge-error"></span>
+          </div>
         </div>
-        <div id="make-the-pledge-button" class="disabled">
-          Make Your Pledge
-        </div>
-      </div>
-      <div id="thanks-for-pledging">
-        Perfect Pledge! You have Pledged to Pay Shane <span id="pledged-amount"></span>.
-        Please enter your payment information below.
-      </div>
-    </div>
-    <div id="payment-entry" class="message-box">
-      <div id="checkout-blocker"></div>
-      <form id="checkout" method="post" action="/checkout">
-        <div id="payment-form"></div>
-        <input id="payment-form-submit" type="submit" value="Pay Your Pledge, Support Your Shane">
+        <input type="submit" id="make-the-pledge-button" class="disabled" name="submit" value="Make Your Pledge" />
       </form>
-      <div id="payment-error"></div>
     </div>
-  </div>
-  <div id="reward-container">
-    <div id="thanks-for-purchasing" class="message-box">
-      Shane Sincerely Thanks You For Making a Pledge and Following Through With It. This Will Not be
-      Forgotten. Please Proceeed to Claim Your Reward Below. If you have any questions, or something
-      seems bad, contact Mister Shane at mistershanemgmt@gmail.com.
-    </div>
-    <div id="download-container" class="message-box">
-      <a id="archive-download-link" href="" target="_blank">
-        Download The Complete Offline Second Shane Experience Archive
-      </a>
-    </div>
-    <div id="coupon-container" class="message-box">
-      To Receive your Well-Earned New Money Injection, copy the Shane Activation Coupon Code Below,
-      and paste it into the Shane Activation Coupon Code Chest in the site map of
-      <a target="_blank" href="http://second.mistershane.com">Second Shane</a>, by Mister Shane.
-      <div id="coupon"></div>
+    <div id="product-reception" class="message-box">
+      After you make your payment you will <b>immediately</b> receive the coupon code for your
+      $4,000,000 New Money injection in Second Shane. Then, within one business day, and hopefully
+      within an hour or two, Shane will e-mail your paypal email address a link to the Second Shane
+      Downloadable Offline Archive. Thank you very much!
     </div>
   </div>
 
-  <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="/js/pay.js"></script>
 </body>

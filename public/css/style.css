@@ -28,6 +28,7 @@ a {
 
   font-family: 'Times New Roman', serif;
   font-size: 18px;
+  line-height: 24px;
 
   -webkit-transition: all 250ms;
   -moz-transition: all 250ms;
@@ -44,6 +45,10 @@ a {
 
 #payment-pledge div {
   margin-bottom: 15px;
+}
+
+#my-pledge {
+  font-size: 20px;
 }
 
 #payment-pledge-input {
@@ -74,67 +79,45 @@ a {
     box-shadow: 0 10px 20px rgba(255, 0, 54, 0.19), 0 6px 6px rgba(255, 0, 54, 0.23);
     border-bottom: solid 2px rgb(255, 0, 54);
   }
+
 #payment-pledge-error {
   color: rgb(255, 0, 54);
   font-style: italic;
   font-size: 15px;
 }
+
 #make-the-pledge-button {
   border: 1px solid rgb(20, 20, 20);
   display: inline-block;
   padding: 10px;
   cursor: pointer;
+
+  font-family: 'Times New Roman', serif;
+  font-size: 18px;
+
+  background-color: white;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  outline: 0;
+
   -webkit-transition: all 250ms;
   -moz-transition: all 250ms;
   transition: all 250ms;
 }
-  #make-the-pledge-button.valid:hover {
-    background-color: rgb(5, 249, 168);
-    border: 1px solid transparent;
+  #make-the-pledge-button:focus {
+    outline: 0;
   }
-  #make-the-pledge-button.disabled {
+  #make-the-pledge-button:disabled {
     color: rgba(0, 0, 0, 0.25);
     border: 1px solid transparent;
     cursor: not-allowed;
   }
-#thanks-for-pledging {
-  display: none;
-  color: rgb(5, 110, 249);
-  font-size: 22px;
-  line-height: 28px;
-}
-  #pledged-amount {
-    text-decoration: underline;
+  #make-the-pledge-button.valid:hover {
+    background-color: rgb(5, 249, 168);
+    border: 1px solid transparent;
   }
 
-#payment-entry {
-  max-width: 666px;
-  position: relative;
-}
-#checkout-blocker {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: white;
-}
-#payment-form-submit {
-  margin-top: 15px;
-  font-family: 'Times New Roman', serif;
-  font-size: 18px;
-  padding: 15px;
-  cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-#payment-error {
-  color: rgb(255, 0, 54);
-  font-style: italic;
-  font-weight: bold;
-  text-decoration: underline;
-  font-size: 20px;
-  margin: 15px;
-}
 
-#reward-container {
-  display: none;
-}
+#reward-container {}
 
 #archive-download-link {
   display: inline-block;
